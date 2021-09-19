@@ -4,7 +4,7 @@ let get = (key)=>{
     return mock.key;
 }
 
-
+console.log("yes");
 module.exports = {
 
     "get":get
