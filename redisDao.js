@@ -1,11 +1,23 @@
-const mock = {"key1":"val1","key2":"val2"};
 
-let get = (key)=>{
-    return mock.key;
+class RedisDao {
+
+    constructor(){
+        this.mock = {"key1":"val1","key2":"val2"};
+
+    }
+
+    /**
+     * get item from cache, or from db
+     * @param {*} itemID 
+     * @returns 
+     */
+    getItem(itemID){
+        return this.mock[itemID];
+    }
 }
 
-console.log("yes");
-module.exports = {
+d = new RedisDao();
+console.log(d.getItem("key1"));
 
-    "get":get
-};
+
+module.exports = RedisDao; 
