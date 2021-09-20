@@ -6,3 +6,4 @@ modules.xml
 misc.xml
 .vscode
 .idea
+node_modules/
