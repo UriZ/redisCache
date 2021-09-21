@@ -1,5 +1,24 @@
 const DAO = require ('../src/redisCache');
-const expect    = require("chai").expect;
+const chai = require("chai");
+const chaiAsPromised = require("chai-as-promised");
+chai.use(chaiAsPromised);
+const expect  = chai.expect;
+chai.should();
+
+const RedisCache = require ('../src/redisCache');
+let cache = new RedisCache();
+
+describe("test redis client ", function() {
+
+    it("test connection", ()=>{
+
+        cache.init().should.eventually.be.an('object');
+
+        
+    });
+
+});
+
 
 describe("first test", function() {
 
