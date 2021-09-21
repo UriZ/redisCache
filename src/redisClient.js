@@ -11,7 +11,14 @@ promisifyAll(redis);
  */
 let init = async ()=>{
 
-    const client = redis.createClient();
+    // 'urirediscluster.jsn1zq.clustercfg.use1.cache.amazonaws.com:6379'
+    // const client = redis.createClient('urirediscluster.jsn1zq.clustercfg.use1.cache.amazonaws.com:6379');
+
+
+    const client = redis.createClient({
+        host: 'urirediscluster.jsn1zq.clustercfg.use1.cache.amazonaws.com',
+        port: 6379
+    });
 
     client.on('error', err => {
         console.log('Error in redis ' + err);
@@ -20,4 +27,4 @@ let init = async ()=>{
     return client;
 }
 
-module.exports = init;
+module.exports = {init};

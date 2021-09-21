@@ -6,16 +6,30 @@ const expect  = chai.expect;
 chai.should();
 
 const RedisCache = require ('../src/redisCache');
-let cache = new RedisCache();
+let redisCache = new RedisCache();
 
 describe("test redis client ", function() {
 
-    it("test connection", ()=>{
+    // it("test connection",  ()=>{
 
-        cache.init().should.eventually.be.an('object');
-
+    //     //let client = await cache.init();
+    //     //client.should.be.an('obect)');
+    //      cache.init().should.eventually.be.an('object');
         
+
+    // });
+
+    it("test put",  async ()=>{
+
+        await redisCache.init();
+        let client = redisCache.getClient();
+        await client.setAsync('foo', 'bar');
+        const fooValue = await client.getAsync('foo');
+        console.log(fooValue);
+        fooValue.should.equal('bar');
+
     });
+
 
 });
 

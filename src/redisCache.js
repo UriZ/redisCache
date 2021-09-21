@@ -1,4 +1,4 @@
-const redis = require ('./redisClient');
+const redisClient = require ('./redisClient');
 
 class RedisCache {
 
@@ -12,14 +12,16 @@ class RedisCache {
     async init (){
 
         try {
-            this.client =  await redis.init();
+            this.client =  await redisClient.init();
         } catch (error) {
             throw new Error("could not connect to client" + error);
 
         }
     }
    
-
+    getClient(){
+        return this.client;
+    }
     /**
      * get item from cache, or from db
      * @param {*} itemID 
