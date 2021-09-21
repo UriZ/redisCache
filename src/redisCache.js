@@ -1,5 +1,5 @@
 
-class RedisDao {
+class RedisCache {
 
     constructor(){
         this.mock = {"key1":"val1","key2":"val2"};
@@ -16,8 +16,8 @@ class RedisDao {
     }
 }
 
-d = new RedisDao();
+d = new RedisCache();
 console.log(d.getItem("key1"));
 
 
-module.exports = RedisDao; 
+module.exports = RedisCache; 

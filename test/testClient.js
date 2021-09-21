@@ -1,4 +1,4 @@
-const DAO = require ('../redisDao');
+const DAO = require ('../src/redisCache');
 const expect    = require("chai").expect;
 
 describe("first test", function() {
