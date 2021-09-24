@@ -18,7 +18,6 @@ describe("test redis client ", function() {
     // console.log(redisCache);
     redisCache.should.be.an('object');
     //redisCache.init().should.eventually.be.an('object');
-        
 
      });
 
@@ -31,7 +30,6 @@ describe("test redis client ", function() {
         const fooValue = await client.getAsync('foo');
         console.log(fooValue);
         fooValue.should.equal('bar');
-
     });
 
 
