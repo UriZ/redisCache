@@ -15,23 +15,24 @@ describe("test redis client ", function() {
     //     //let client = await cache.init();
     //     //client.should.be.an('obect)');
     await redisCache.init();
-    console.log(redisCache);
+    // console.log(redisCache);
     redisCache.should.be.an('object');
     //redisCache.init().should.eventually.be.an('object');
         
 
      });
 
-    // it("test put",  async ()=>{
+    it("test put",  async ()=>{
 
-    //     await redisCache.init();
-    //     let client = redisCache.getClient();
-    //     await client.setAsync('foo', 'bar');
-    //     const fooValue = await client.getAsync('foo');
-    //     console.log(fooValue);
-    //     fooValue.should.equal('bar');
+        await redisCache.init();
+        let client = redisCache.getClient();
+        await client.auth('bgyRSOJIG1Xl865TsCr0zO4GvlU9MTxw');
+        await client.setAsync('foo', 'bar');
+        const fooValue = await client.getAsync('foo');
+        console.log(fooValue);
+        fooValue.should.equal('bar');
 
-    // });
+    });
 
 
 });

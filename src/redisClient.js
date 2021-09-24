@@ -16,8 +16,8 @@ let init = async ()=>{
 
 
     const client = redis.createClient({
-        host: 'urirediscluster-0001-001.jsn1zq.0001.use1.cache.amazonaws.com',
-        port: 6379
+        host: 'redis-13765.c250.eu-central-1-1.ec2.cloud.redislabs.com',
+        port: 13765
     });
 
     client.on('error', err => {
