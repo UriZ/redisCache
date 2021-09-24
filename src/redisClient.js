@@ -16,7 +16,7 @@ let init = async ()=>{
 
 
     const client = redis.createClient({
-        host: 'urirediscluster.jsn1zq.clustercfg.use1.cache.amazonaws.com',
+        host: 'urirediscluster-0001-001.jsn1zq.0001.use1.cache.amazonaws.com',
         port: 6379
     });
 

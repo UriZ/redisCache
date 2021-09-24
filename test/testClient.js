@@ -10,25 +10,28 @@ let redisCache = new RedisCache();
 
 describe("test redis client ", function() {
 
-    // it("test connection",  ()=>{
+     it("test connection", async ()=>{
 
     //     //let client = await cache.init();
     //     //client.should.be.an('obect)');
-    //      cache.init().should.eventually.be.an('object');
+    await redisCache.init();
+    console.log(redisCache);
+    redisCache.should.be.an('object');
+    //redisCache.init().should.eventually.be.an('object');
         
 
+     });
+
+    // it("test put",  async ()=>{
+
+    //     await redisCache.init();
+    //     let client = redisCache.getClient();
+    //     await client.setAsync('foo', 'bar');
+    //     const fooValue = await client.getAsync('foo');
+    //     console.log(fooValue);
+    //     fooValue.should.equal('bar');
+
     // });
-
-    it("test put",  async ()=>{
-
-        await redisCache.init();
-        let client = redisCache.getClient();
-        await client.setAsync('foo', 'bar');
-        const fooValue = await client.getAsync('foo');
-        console.log(fooValue);
-        fooValue.should.equal('bar');
-
-    });
 
 
 });
