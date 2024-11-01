@@ -33,6 +33,10 @@ class RedisCache {
     getItem(itemID){
         return this.mock[itemID];
     }
+
+    setItem(itemID, value){
+        this.mock[itemID]  = value;
+    }
 }
 
 d = new RedisCache();
