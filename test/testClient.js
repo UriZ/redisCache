@@ -48,5 +48,11 @@ describe("first test", function() {
         expect(val).to.equal("val1");
 
     });
+    it("should handle setting and getting a value", function() {
+        let cache = new DAO();
+        cache.setItem("key3", "val3");
+        let val = cache.getItem("key3");
+        expect(val).to.equal("val3");
+    });
   });
 
