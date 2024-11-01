@@ -3,6 +3,7 @@ const redisClient = require ('./redisClient');
 class RedisCache {
 
     // constructor with mock data
+    // some other comment 
 
     constructor(){
         this.mock = {"key1":"val1","key2":"val2"};
